@@ -39,7 +39,6 @@ def fetch_cards(uri,data,page=1):
                 tmp_scryfall_data = response.json()
                 for card in tmp_scryfall_data['data']:
                     data[card['name']] = (card['collector_number'], card['name'], normalize_colors(card['colors'], card['name'], card['type_line']), card['image_uris']['normal'])
-                    print(data[card['name']])
                 if "next_page" in tmp_scryfall_data:
                     fetch_cards(tmp_scryfall_data["next_page"], data, page + 1)
         except Exception as err:
