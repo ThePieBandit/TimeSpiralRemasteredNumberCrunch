@@ -1,0 +1,25 @@
+<h1>Time Spiral Remastered Number Crunch</h1>
+<br/>
+<div class="row">
+  <h2>Cards that are In</h2>
+  <div *ngFor="let card of in">
+    <img src="{{card.image}}" width="244px" height="340px" style="float: left"/>
+  </div>
+</div>
+<div class="row">
+  <h2>Cards that are Maybe In</h2>
+  <div *ngFor="let gap of possible">
+    <div class="row">
+      <h3>{{gap.gap}} of the following:</h3>
+      <div *ngFor="let card of gap.cards">
+        <img src="{{card.image}}" width="244px" height="340px" style="float: left; filter: grayscale(50%)"/>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <h2>Cards that are Out</h2>
+  <div *ngFor="let card of out">
+    <img src="{{card.image}}" width="244px" height="340px" style="float: left; filter: grayscale(80%)"/>
+  </div>
+</div>
