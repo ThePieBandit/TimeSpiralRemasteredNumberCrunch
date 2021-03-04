@@ -53,6 +53,11 @@ tsr = [None]*289
 fetch_cards(SCRYFALL_URL_TSB, tsb_data)
 fetch_cards(SCRYFALL_URL_TSR, tsr_data)
 
+
+with open('tsr_data.json', mode='w') as json_file:
+    json.dump(tsr_data, json_file)
+
+
 for key in tsr_data:
     tsb_data.pop(key, None)
     tsr.insert(int(tsr_data[key][0]), key)
