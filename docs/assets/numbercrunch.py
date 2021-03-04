@@ -60,7 +60,10 @@ with open('tsr_data.json', mode='w') as json_file:
 
 for key in tsr_data:
     tsb_data.pop(key, None)
-    tsr.insert(int(tsr_data[key][0]), key)
+    try:
+      tsr.insert(int(tsr_data[key][0]), key)
+    except Exception as err:
+      print(err)
 for key in tsb_data:
     tsb_images[key] = tsb_data[key][3]
 
